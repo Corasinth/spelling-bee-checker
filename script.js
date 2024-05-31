@@ -1,6 +1,12 @@
 const { log, Console } = require('console')
 const fs = require('fs')
 
+
+
+
+
+
+
 // Generates a list of words that are acceptable for a given puzzle
 function wordSearch(acceptableLetters, centerLetter) {
     // Reference alphabet string and case matching input letters
@@ -10,7 +16,7 @@ function wordSearch(acceptableLetters, centerLetter) {
 
     // Arrays to distinguish the list of words and the list of words that use every letter
     let wordsList = []
-    let superWordList = []
+    let ramWordList = []
 
     // Putting words in memory
     const dict = JSON.parse(fs.readFileSync('./words.json', 'utf8', (err, data) => {
@@ -37,16 +43,16 @@ function wordSearch(acceptableLetters, centerLetter) {
     let centerLetterReg = new RegExp(`${centerLetter}`, "i")
     let unacceptableLettersReg = new RegExp(`[${unacceptableLetters}]`, "i")
     // Regex uses positive lookahead to ensure the following conditions are met: that there is, for every letter passed into the function, at least one instance of any character followed by that letterg
-    let superWordReg = new RegExp(`(?=.*${acceptableLetters[0]})(?=.*${acceptableLetters[1]})(?=.*${acceptableLetters[2]})(?=.*${acceptableLetters[3]})(?=.*${acceptableLetters[4]})(?=.*${acceptableLetters[5]})(?=.*${centerLetter}).+`)
+    let pangramWordReg = new RegExp(`(?=.*${acceptableLetters[0]})(?=.*${acceptableLetters[1]})(?=.*${acceptableLetters[2]})(?=.*${acceptableLetters[3]})(?=.*${acceptableLetters[4]})(?=.*${acceptableLetters[5]})(?=.*${centerLetter}).+`)
 
 
     // Loop through 4-letter word dictionary and find all words that have the center letter at least once and which don't contain any unacceptable letters
     // Also keep track of words that contain every letter
     for (let word of dict) {
         if (word.match(centerLetterReg) && !word.match(unacceptableLettersReg)) {
-            // If a super word match is found we skip this iteration so it doesn't get added to both lists
-            if (word.match(superWordReg)) {
-                superWordList.push(word)
+            // If a pangram word match is found we skip this iteration so it doesn't get added to both lists
+            if (word.match(pangramWordReg)) {
+                pangramWordList.push(word)
                 continue
             }
             wordsList.push(word)
@@ -54,7 +60,7 @@ function wordSearch(acceptableLetters, centerLetter) {
     }
     return {
         words: wordsList,
-        superWords: superWordList
+        pangramWords: pangramWordList
     }
 }
 wordSearch('craonv', "d")
