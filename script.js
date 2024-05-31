@@ -47,12 +47,14 @@ function wordSearch(acceptableLetters, centerLetter) {
             // If a super word match is found we skip this iteration so it doesn't get added to both lists
             if (word.match(superWordReg)) {
                 superWordList.push(word)
-                console.log(word);
                 continue
             }
             wordsList.push(word)
         }
     }
-    
+    return {
+        words: wordsList,
+        superWords: superWordList
+    }
 }
 wordSearch('craonv', "d")
