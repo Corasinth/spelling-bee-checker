@@ -1,39 +1,43 @@
 <!DOCTYPE html>
 <html lang='en'>
+
 <head>
-    <meta charset='UTF-8'/>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'/>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0'/>
-    <link rel='stylesheet' href='./assets/css/reset.css'/>
-    <link rel='stylesheet' href='./assets/css/styles.css'/>
+    <meta charset='UTF-8' />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <link rel='stylesheet' href='./assets/css/reset.css' />
+    <link rel='stylesheet' href='./assets/css/styles.css' />
     <title>Spelling Bee Checker</title>
 </head>
+
 <body>
     <main>
 
-        <form>
+        <form id="puzzleLettersForm">
             <label for="outerLetters">Outer Letters</label>
             <input type="text" id="outerLetters" name="outerLetters"></input>
-            <label for="centerLetters">Center Letters</label>
-            <input type="text" id="centerLetters" name="centerLetters"></input>
+            <label for="centerLetter">Center Letter</label>
+            <input type="text" id="centerLetter" name="centerLetter"></input>
             <input type="submit" value="submit"></input>
         </form>
 
-        <div id="searchCompleteMessage">
+        <div id="searchCompleteMessage" style="display:none;">
             <p id="wordsFound"></p>
             <button>Reveal Words</button>
             <button>Reveal Pangrams</button>
         </div>
-        
+
         <div id="wordsList">
 
         </div>
-        
+
         <div id="pangramsList">
 
         </div>
 
     </main>
-  <script src='./assets/scripts/main.js'></script>
+    <script src='./assets/scripts/words.js'></script>
+    <script src='./assets/scripts/main.js'></script>
 </body>
+
 </html>
