@@ -33,6 +33,11 @@ li{
     margin: 5px;
 }
 
+a{
+    text-decoration: none;
+    color: black;
+}
+
 .pangram{
     background-color: aqua;
 }
