@@ -145,11 +145,11 @@ function displayWords(wordArr) {
     for (let word of wordArr) {
         if (word.match(pangramWordReg)) {
             // Adds special class for panagrams
-            wordsListHTML += `<li class= "pangram">${word}</li>`
+            wordsListHTML += `<li class= "pangram"><a href="https://duckduckgo.com/?t=ffab&q=${word}+defintion&ia=web">${word}</a></li>`
             continue
         }
 
-        wordsListHTML += `<li>${word}</li>`
+        wordsListHTML += `<li><a href="https://duckduckgo.com/?t=ffab&q=${word}+defintion&ia=web">${word}</a></li>`
     }
 
     wordsListEl.innerHTML = wordsListHTML
