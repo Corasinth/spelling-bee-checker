@@ -33,21 +33,23 @@ puzzleLettersForm.addEventListener("submit", (e) => {
 
         if(letter === centerLetter){
             // Duplicate letters
-
+            console.log('Duplicate letter between outer and center letters')
             return
         }
 
         if(errorTracker[letter]){
             // Duplicate letters
-
+            console.log('Duplicate letters in boxr')
             return
         }
+
+        errorTracker[letter] = true
     
     }
     
     if (Object.keys(errorTracker).length < 6){
         // Too few letters
-
+        console.log('Too few letters in outer letters')
         return
     }
     
