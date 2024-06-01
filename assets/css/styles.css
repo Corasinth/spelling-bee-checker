@@ -1,0 +1,39 @@
+main{
+    margin-left: 4px;
+}
+form{
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: auto;
+}
+
+div{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+#wordsListContainer{
+    width: 20rem;
+}
+
+ul{
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: left;
+    justify-content: space-between;
+}
+
+li{
+    border-bottom: 2px black solid;
+    margin: 5px;
+}
+
+.pangram{
+    background-color: aqua;
+}
+

@@ -145,7 +145,7 @@ function displayWords(wordArr) {
     for (let word of wordArr) {
         if (word.match(pangramWordReg)) {
             // Adds special class for panagrams
-            wordsListHTML += `<li class= "panagram">${word}</li>`
+            wordsListHTML += `<li class= "pangram">${word}</li>`
             continue
         }
 
