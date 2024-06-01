@@ -23,18 +23,14 @@
 
         <div id="searchCompleteMessage" style="display:none;">
             <p id="wordsFound"></p>
-            <button>Reveal Words</button>
-            <button>Reveal Pangrams</button>
+            <button id="revealAll">Reveal All</button>
+            <button id="revealWords">Reveal Words</button>
+            <button id="revealPanagrams">Reveal Pangram(s)</button>
         </div>
 
-        <div id="wordsList">
-
+        <div id="wordsListContainer">
+            <ul id="wordsList"></ul>
         </div>
-
-        <div id="pangramsList">
-
-        </div>
-
     </main>
     <script src='./assets/scripts/words.js'></script>
     <script src='./assets/scripts/main.js'></script>
