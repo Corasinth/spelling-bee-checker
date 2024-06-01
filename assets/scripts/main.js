@@ -26,6 +26,34 @@ puzzleLettersForm.addEventListener("submit", (e) => {
     centerLetter = document.getElementById("centerLetter").value
 
 
+
+    let errorTracker = {}
+
+    for(let letter of outerLetters){
+
+        if(letter === centerLetter){
+            // Duplicate letters
+
+            return
+        }
+
+        if(errorTracker[letter]){
+            // Duplicate letters
+
+            return
+        }
+    
+    }
+    
+    if (Object.keys(errorTracker).length < 6){
+        // Too few letters
+
+        return
+    }
+    
+
+
+    
     solutionObject = wordSearch(outerLetters, centerLetter)
     let panagramPlural = 'panagrams'
 
